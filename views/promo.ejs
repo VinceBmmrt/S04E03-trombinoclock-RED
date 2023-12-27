@@ -1,0 +1,25 @@
+<%- include('partials/header') %> <% if (promo === undefined) { %>
+
+<p>Aucune promo correspondante !</p>
+<a href="/promos"> Retour </a>
+
+<% } else { %>
+
+<h1>Promo : <%= promo.name %></h1>
+
+<p>
+  Github :
+  <a href="<%= promo.github_organization %>">Github de la promo</a>
+</p>
+<nav>
+  <ul>
+    <li>
+      <a href="/promo/<%= promo.name %>/<%= promo.id %>/students"
+        >Liste des étudiants</a
+      >
+    </li>
+    <li><a href="promo_edit.html">Modifier la promo</a></li>
+  </ul>
+</nav>
+
+<% } %> <%- include('partials/footer') %>

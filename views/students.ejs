@@ -1,0 +1,43 @@
+<%- include('partials/header') %>
+
+<h1>Liste des étudiants de la promo : <%= promo.name %></h1>
+<ul class="cards">
+  <% for (const student of studentList) { %>
+
+  <!-- {
+        //         "id": 8254,
+        //         "first_name": "Houd",
+        //         "last_name": "ALAMI MARROUNI",
+        //         "github_username": "HoudAlami",
+        //         "promo": 663,
+        //         "profile_picture_url": "https://github.com/HoudAlami.png"
+        //     }, -->
+
+  <li class="card">
+    <a href="/student/<%= student.id %>">
+      <figure>
+        <img
+          src="<%= student.profile_picture_url %>"
+          alt="<%= student.first_name %>_profile_pic"
+        />
+        <figcaption>
+          <%= student.first_name %> <%= student.last_name %>
+        </figcaption>
+      </figure>
+    </a>
+  </li>
+
+  <% } %>
+</ul>
+
+<nav class="pagination">
+  <ul>
+    <li><a href="#">Précedent</a></li>
+    <li><a href="#">1</a></li>
+    <li class="active"><span>2</span></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">Suivant</a></li>
+  </ul>
+</nav>
+
+<%- include('partials/footer') %>
